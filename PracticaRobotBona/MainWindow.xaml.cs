@@ -43,7 +43,7 @@ namespace PracticaRobotBona
         {
             foreach (Image image in robot.Robots)
             {
-                move(image);
+                
                 sitoca(image);
                 robot.CanviRobot(image);
             }
@@ -83,59 +83,7 @@ namespace PracticaRobotBona
             canvas.Children.Add(robot.Tresor);
 
         }
-        private void move(Image sender)
-        {
 
-
-
-            int esquerra = (int)Canvas.GetLeft(sender);
-            int adalt = (int)Canvas.GetTop(sender);
-            if (robot.Direccio == DireccioRobot.Nort)
-            {
-                count++;
-                adalt -= 25;
-                if (adalt <= robot.Llargadarob)
-                {
-                    
-                    robot.CanviRobot(sender);
-                }
-            }
-
-            else if (robot.Direccio == DireccioRobot.Sud)
-            {
-                count++;
-                adalt += 25;
-                if (adalt >= (robot.HEIGHT - (robot.Llargadarob * 2)))
-                {
-                    
-                    robot.CanviRobot(sender);
-                }
-
-            }
-            else if (robot.Direccio == DireccioRobot.Est)
-            {
-                count++;
-                esquerra -= 25;
-                if (esquerra <= robot.Ampladarob)
-                {
-                    
-                    robot.CanviRobot(sender);
-                }
-            }
-            else if (robot.Direccio == DireccioRobot.Oest)
-            {
-                count++;
-                esquerra += 25;
-                if (esquerra >= (robot.WIDTH - (robot.Ampladarob * 2)))
-                {
-                    
-                    robot.CanviRobot(sender);
-                }
-
-            }
-            Canvas.SetLeft(sender, esquerra);
-            Canvas.SetTop(sender, adalt);
-        }
 
     }
 }

@@ -96,7 +96,8 @@ namespace PracticaRobotBona
                 adalt -= 25;
                 if (adalt <= robot.Llargadarob)
                 {
-                    
+
+                    setDir();
                     robot.CanviRobot(sender);
                 }
             }
@@ -107,7 +108,8 @@ namespace PracticaRobotBona
                 adalt += 25;
                 if (adalt >= (robot.HEIGHT - (robot.Llargadarob * 2)))
                 {
-                    
+
+                    setDir();
                     robot.CanviRobot(sender);
                 }
 
@@ -118,7 +120,8 @@ namespace PracticaRobotBona
                 esquerra -= 25;
                 if (esquerra <= robot.Ampladarob)
                 {
-                    
+
+                    setDir();
                     robot.CanviRobot(sender);
                 }
             }
@@ -128,7 +131,8 @@ namespace PracticaRobotBona
                 esquerra += 25;
                 if (esquerra >= (robot.WIDTH - (robot.Ampladarob * 2)))
                 {
-                    
+
+                    setDir();
                     robot.CanviRobot(sender);
                 }
 
@@ -137,5 +141,29 @@ namespace PracticaRobotBona
             Canvas.SetTop(sender, adalt);
         }
 
+        public void setDir()
+        {
+            Random r = new Random();
+            int randomRest = r.Next(0, 4);
+
+            if (randomRest == 0)
+            {
+                robot.Direccio = DireccioRobot.Sud;
+            }
+            else if (randomRest == 1)
+            {
+                robot.Direccio = DireccioRobot.Nort;
+            }
+            else if (randomRest == 2)
+            {
+                robot.Direccio = DireccioRobot.Est;
+            }
+            else if (randomRest == 3)
+            {
+                robot.Direccio = DireccioRobot.Oest;
+            }
+
+        }
     }
+
 }

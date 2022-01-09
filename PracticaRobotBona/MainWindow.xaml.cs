@@ -44,24 +44,10 @@ namespace PracticaRobotBona
             foreach (Image image in robot.Robots)
             {
                 
-                sitoca(image);
                 robot.CanviRobot(image);
             }
 
             tb_nIntents.Text = "Numero d'intents: " + count;
-        }
-
-        private void sitoca(Image sender)
-        {
-            int esquerrarob = (int)Canvas.GetLeft(sender);
-            int adaltrob = (int)Canvas.GetTop(sender);
-            int esquerra = (int)Canvas.GetLeft(robot.Tresor);
-            int adalt = (int)Canvas.GetTop(robot.Tresor);
-            if (adalt == adaltrob && esquerra == esquerrarob)
-            {
-                timer.Stop();
-                btn_Incia.Content = "Final";
-            }
         }
 
         private void btn_Incia_Click(object sender, RoutedEventArgs e)
